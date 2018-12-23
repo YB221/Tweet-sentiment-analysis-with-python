@@ -9,3 +9,8 @@ Here is a piece of code based on python to categorize and analyze tweets of your
 6. again it will seek permission to install the package you give it by pressing Y and hit enter
 7. after this installation,we talk about twitter api you need to sign up for a devoloper account on twitter and create an app(https://youtu.be/M_gGUqhCJoU) to get api keys.
 8. now we are set to understand and run the code embeded in this repository.
+
+
+
+#this repository was created as one of the winter of code projects.
+#IITISM
