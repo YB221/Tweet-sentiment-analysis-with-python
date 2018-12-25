@@ -1,9 +1,9 @@
 import tweepy
 from textblob import TextBlob
-consumer_key='cO4PJdfaFSvX25BB7ysQio7Q2'
-consumer_key_secret='31REzY4Q8NRZuqQxlwCtBcgZZeqZyLiClxEyAoerhX6M91TfUb'
-access_token='2476790046-ueMP4B4lfaxkNgKpcqcdxlFAW5ZpTQuXE3dEfX1'
-access_token_secret='iA1pKvofwVpbzhgtUyGQY9glulVn8mqzryoPRbIk0Csbk'
+consumer_key='foo'
+consumer_key_secret='foo'
+access_token='foo' 
+access_token_secret='foo'
 auth=tweepy.OAuthHandler(consumer_key,consumer_key_secret)
 auth.set_access_token(access_token, access_token_secret)
 api=tweepy.API(auth)
