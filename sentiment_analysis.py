@@ -1,9 +1,15 @@
+import matplotlib.pyplot as plt
 import tweepy
 from textblob import TextBlob
-consumer_key='foo'
-consumer_key_secret='foo'
-access_token='foo' 
-access_token_secret='foo'
+p=0
+ne=0
+nu=0
+z=[p,ne,nu]
+l=['positive','negetive','neutral']
+consumer_key='cO4PJdfaFSvX25BB7ysQio7Q2'
+consumer_key_secret='31REzY4Q8NRZuqQxlwCtBcgZZeqZyLiClxEyAoerhX6M91TfUb'
+access_token='2476790046-ueMP4B4lfaxkNgKpcqcdxlFAW5ZpTQuXE3dEfX1'
+access_token_secret='iA1pKvofwVpbzhgtUyGQY9glulVn8mqzryoPRbIk0Csbk'
 auth=tweepy.OAuthHandler(consumer_key,consumer_key_secret)
 auth.set_access_token(access_token, access_token_secret)
 api=tweepy.API(auth)
@@ -14,7 +20,16 @@ for tweet in public_tweets:
     print(analysis.sentiment)
     if analysis.sentiment[0]>0:
        print( 'Positive')
+       p=p+1
     elif analysis.sentiment[0]<0:
        print( 'Negative')
+       ne=ne+1
     else:
        print ('Neutral')
+       nu=nu+1
+c=['red','blue','green']
+plt.pie(z,labels=l,radius=1,colors=c)
+plt.show()
+print(p)
+print(ne)
+print(nu)
