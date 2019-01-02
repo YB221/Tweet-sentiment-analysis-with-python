@@ -30,6 +30,3 @@ for tweet in public_tweets:
 c=['red','blue','green']
 plt.pie(z,labels=l,radius=1,colors=c)
 plt.show()
-print(p)
-print(ne)
-print(nu)
