@@ -4,29 +4,38 @@ from textblob import TextBlob
 P=0
 Ne=0
 Nu=0
-consumer_key = 'cO4PJdfaFSvX25BB7ysQio7Q2'
-consumer_key_secret='31REzY4Q8NRZuqQxlwCtBcgZZeqZyLiClxEyAoerhX6M91TfUb'
-access_token = '2476790046-ueMP4B4lfaxkNgKpcqcdxlFAW5ZpTQuXE3dEfX1'
-access_token_secret = 'iA1pKvofwVpbzhgtUyGQY9glulVn8mqzryoPRbIk0Csbk'
+consumer_key = '4vYLAmtRXFVc9dp7s2iuuOOID'
+consumer_key_secret='770qat6wInRcaV8AytlEeoJCluudAHECtFo7QsfebVW8ZG5zKM'
+access_token = '2476790046-IFCtG5p5uhyIqLn19JjGoXTLmIs5yApgIKSdcMU'
+access_token_secret = 'vPGih9SaGE4twxp9ZtpoWMLYAP7rvYRFHaHhIYkhi7HGk'
 auth = tweepy.OAuthHandler(consumer_key, consumer_key_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
-public_tweets = api.search('#metoo')
-for tweet in public_tweets:
-    print(tweet.text)
-    analysis = TextBlob(tweet.text)
-    print(analysis.sentiment)
-    if analysis.sentiment[0]>0:
+s=raw_input('what do you want to analyze?it can be a #Tag,companay,celebrity etc.\n')
+co=input('how much tweets do you want to analyze?\n')
+#public_tweets = api.search('#MeToo')
+c=0
+for tweet in tweepy.Cursor(api.search,
+                           q = s,count=co,
+                           lang = "en").items(co):   
+     print(tweet.text)
+     analysis = TextBlob(tweet.text)
+     print(analysis.sentiment)
+     if analysis.sentiment[0]>0:
       print( 'Positive')
       P=P+1
-    elif analysis.sentiment[0]<0:
+      c=c+1
+     elif analysis.sentiment[0]<0:
       print( 'Negative')
       Ne=Ne+1
-    else:
+      c=c+1
+     else:
+      c=c+1
       print ('Neutral')
       Nu=Nu+1 
-
+print(c)
 Z=[P,Ne,Nu]  
 L=['positive','negetive','neutral']     
 plt.pie(Z , labels=L)
+plt.axis('equal')
 plt.show()
