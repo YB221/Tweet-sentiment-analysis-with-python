@@ -10,7 +10,7 @@ consumer_key_secret='770qat6wInRcaV8AytlEeoJCluudAHECtFo7QsfebVW8ZG5zKM'
 access_token = '2476790046-IFCtG5p5uhyIqLn19JjGoXTLmIs5yApgIKSdcMU'
 access_token_secret = 'vPGih9SaGE4twxp9ZtpoWMLYAP7rvYRFHaHhIYkhi7HGk'
 auth = tweepy.OAuthHandler(consumer_key, consumer_key_secret) # authenticating with twitter API
-auth.set_access_token(access_token, access_token_secret) # reaching to outr app that we created
+auth.set_access_token(access_token, access_token_secret) # reaching to our app that we created in twitter API
 api = tweepy.API(auth)
 s=raw_input('what do you want to analyze?it can be a #Tag,companay,celebrity etc.\n')
 co=input('how much tweets do you want to analyze?\n')
