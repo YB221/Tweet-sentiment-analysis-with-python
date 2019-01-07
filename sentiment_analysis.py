@@ -17,9 +17,9 @@ co=input('how much tweets do you want to analyze?\n')
 c=0
 for tweet in tweepy.Cursor(api.search,                      #using cursor in tweepy to get tweets it automatically takes care of 'pagination'
                            q = s,count=co,
-                           lang = "en").items(co):   
-     print(tweet.text) #printing what we've extracted
-     analysis = TextBlob(tweet.text) #analysisng what we've printed
+                           lang = "en",tweet_mode='extended').items(co):   
+     print(tweet.full_text) #printing what we've extracted
+     analysis = TextBlob(tweet.full_text) #analysisng what we've printed
      print(analysis.sentiment)#printing what we've analysed in mathematical or technical tems.
     #printing what we've analysed in layman's terms
      if analysis.sentiment[0]>0:
