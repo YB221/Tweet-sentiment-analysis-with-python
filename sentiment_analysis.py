@@ -5,10 +5,10 @@ P=0  #counter for positive tweets
 Ne=0 #counter for negetive tweets
 Nu=0 #counter for neutral tweets
 #saving variables so that code dose'nt seem to be written in gibberish :) 
-consumer_key = '4vYLAmtRXFVc9dp7s2iuuOOID' 
-consumer_key_secret='770qat6wInRcaV8AytlEeoJCluudAHECtFo7QsfebVW8ZG5zKM'
-access_token = '2476790046-IFCtG5p5uhyIqLn19JjGoXTLmIs5yApgIKSdcMU'
-access_token_secret = 'vPGih9SaGE4twxp9ZtpoWMLYAP7rvYRFHaHhIYkhi7HGk'
+consumer_key = 'foo' 
+consumer_key_secret='foo'
+access_token = 'foo'
+access_token_secret = 'foo'
 auth = tweepy.OAuthHandler(consumer_key, consumer_key_secret) # authenticating with twitter API
 auth.set_access_token(access_token, access_token_secret) # reaching to our app that we created in twitter API
 api = tweepy.API(auth)
